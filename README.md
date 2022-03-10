@@ -4,7 +4,7 @@ A photo album app that allows users to share their photos in public.
 
 # 🔴 Live Demo
 
-Not live yet!
+[Click here...](https://goofy-benz-de99c8.netlify.app/)
 
 ## Description
 
