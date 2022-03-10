@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => {
       backgroundColor: theme.palette.background.paper,
       padding: theme.spacing(8, 0, 6),
     },
+    description: {
+      marginTop: "10px",
+    },
     buttons: {
       marginTop: "40px",
     },
@@ -25,6 +28,10 @@ const useStyles = makeStyles((theme) => {
     },
     cardContent: {
       flexGrow: 1,
+    },
+    footer: {
+      backgroundColor: theme.palette.background.paper,
+      padding: "50px 0",
     },
   };
 });

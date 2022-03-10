@@ -13,8 +13,10 @@ import {
   Toolbar,
   Container,
   Button,
-  ButtonGroup,
+  Link,
 } from "@material-ui/core";
+
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 function App() {
   const classes = useStyles("");
@@ -34,12 +36,7 @@ function App() {
       <main>
         <div className={classes.container}>
           <Container maxWidth="sm">
-            <Typography
-              variant="h2"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
+            <Typography variant="h2" align="center" color="textPrimary">
               Photo Album
             </Typography>
 
@@ -48,6 +45,7 @@ function App() {
               align="center"
               color="textSecondary"
               paragraph
+              className={classes.description}
             >
               Hello Everyone! This is a photo album, and I'm trying to make this
               sentence as logn as possible, so we can see how does it look like
@@ -74,39 +72,52 @@ function App() {
 
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
-            <Grid item>
-              <Card className={classes.card}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  image="https://source.unsplash.com/random"
-                  title="Image title"
-                />
+            {cards.map((card) => (
+              <Grid key={card} item xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://source.unsplash.com/random"
+                    title="Image title"
+                  />
 
-                <CardContent className={classes.cardContent}>
-                  <Typography gutterButtom variant="h5">
-                    Heading
-                  </Typography>
+                  <CardContent className={classes.cardContent}>
+                    <Typography variant="h5">{`Photo ${card}`}</Typography>
 
-                  <Typography>
-                    This is a media card. You can use the section to describe
-                    the card.
-                  </Typography>
-                </CardContent>
+                    <Typography>
+                      This is a media card. You can use the section to describe
+                      the card.
+                    </Typography>
+                  </CardContent>
 
-                <CardActions>
-                  <Button size="sm" color="primary">
-                    View
-                  </Button>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      View
+                    </Button>
 
-                  <Button size="sm" color="primary">
-                    Edit
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
+                    <Button size="small" color="primary">
+                      Edit
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </main>
+
+      <footer className={classes.footer}>
+        <Typography variant="h6" align="center">
+          Made With ❤️ By{" "}
+          <Link href="https://www.twitter.com/ssadawi__" target="__blank">
+            Samer A.
+          </Link>
+        </Typography>
+
+        <Typography variant="subtitle1" align="center" color="textSecondary">
+          © 2022 Samer A.
+        </Typography>
+      </footer>
     </Fragment>
   );
 }
